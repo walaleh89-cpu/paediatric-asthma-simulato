@@ -278,11 +278,13 @@ Rules:
 
         return None, "unknown"
 
-    except Exception:
+    except Exception as e:
 
-        # Do not display exceptions because some
-        # provider errors may contain sensitive data.
         st.session_state.ai_failed = True
+
+        # Log only the exception type to avoid exposing
+        # API keys or sensitive request information.
+        st.session_state.ai_error_type = type(e).__name__
 
         return None, "unavailable"
 
@@ -370,8 +372,15 @@ elif st.session_state.ai_failed:
 
     st.warning(
         "Gemini is temporarily unavailable. "
-        "The simulator is using keyword matching. "
-        "Restart the encounter to retry Gemini."
+        "The simulator is using keyword matching."
+    )
+
+    st.error(
+        "Error type: "
+        + st.session_state.get(
+            "ai_error_type",
+            "Unknown"
+        )
     )
 
 else:
