@@ -79,7 +79,6 @@ if GEMINI_AVAILABLE:
                     model=GEMINI_MODEL,
                     contents="Say hello."
                 )    
-                )
 
                 st.success("Gemini is working!")
                 st.write(response.text)
