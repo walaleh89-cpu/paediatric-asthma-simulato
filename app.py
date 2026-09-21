@@ -277,13 +277,13 @@ Rules:
 7. Return only one of the permitted IDs.
 """
 
-    response = client.models.generate_content(
-        model=GEMINI_MODEL,
-        contents=prompt,
-        config={
-            "temperature": 0
-        }
-    )
+        response = client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=prompt,
+            config={
+                "temperature": 0
+            }
+        )
         st.session_state.ai_calls += 1
 
         result = (response.text or "").strip()
