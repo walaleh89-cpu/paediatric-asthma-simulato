@@ -277,29 +277,13 @@ Rules:
 7. Return only one of the permitted IDs.
 """
 
-        response = client.models.generate_content(
-
-            model=GEMINI_MODEL,
-
-            contents=prompt,
-
-            config={
-                "response_mime_type": "text/x.enum",
-                "response_schema": {
-                    "type": "STRING",
-                    "enum": (
-                        valid_ids
-                        + [
-                            "unknown",
-                            "assessment",
-                            "multiple"
-                        ]
-                    )
-                },
-                "temperature": 0
-            }
-        )
-
+response = client.models.generate_content(
+    model=GEMINI_MODEL,
+    contents=prompt,
+    config={
+        "temperature": 0
+    }
+)
         st.session_state.ai_calls += 1
 
         result = (response.text or "").strip()
