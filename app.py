@@ -59,7 +59,7 @@ GEMINI_AVAILABLE = bool(API_KEY and genai is not None)
 
 # Change this if your Google AI Studio project
 # offers a different free-tier model.
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-2.5-flash-lite"
 
 # TEMPORARY GEMINI CONNECTION TEST
 
@@ -74,9 +74,11 @@ if GEMINI_AVAILABLE:
                     api_key=API_KEY
                 )
 
+                
                 response = client.models.generate_content(
-                    model="gemini-2.5-flash",
+                    model=GEMINI_MODEL,
                     contents="Say hello."
+                )    
                 )
 
                 st.success("Gemini is working!")
