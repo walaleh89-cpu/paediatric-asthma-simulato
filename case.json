@@ -1,0 +1,25 @@
+{
+  "title": "Childhood asthma: focused assessment",
+  "opening": "Hello nurse, I'm worried about my son. He's been coughing and breathing faster since last night.",
+  "facts": [
+    {"id":"onset","keywords":["when","start","onset","how long","duration"],"answer":"His cough started yesterday evening. His breathing became worse this morning.","category":"history"},
+    {"id":"symptoms","keywords":["symptom","cough","wheez","breath","noisy","whistl"],"answer":"He has been coughing and I hear a whistling sound when he breathes out. He seems more breathless today.","category":"history"},
+    {"id":"fever","keywords":["fever","temperature","hot"],"answer":"I haven't noticed a fever.","category":"history"},
+    {"id":"inhaler","keywords":["inhaler","salbutamol","medicine","medication","treatment","puff"],"answer":"He has a blue reliever inhaler. I gave him two puffs this morning using his spacer, but he still seems breathless. I don't remember the exact time.","category":"history"},
+    {"id":"triggers","keywords":["trigger","dust","exercise","allerg","smoke","cold","viral"],"answer":"He sometimes coughs when running and when the room is dusty. He also had a runny nose yesterday.","category":"history"},
+    {"id":"intake","keywords":["eat","drink","fluid","urine","pee","wet"],"answer":"He has eaten less today, but he's still taking small sips of water. He passed urine this morning.","category":"history"},
+    {"id":"severity","keywords":["talk","speak","sleep","play","activity","blue","cyanosis","drows","tired","conscious"],"answer":"He doesn't want to play and stops to catch his breath when talking. He is awake. I haven't noticed blue lips.","category":"history"},
+    {"id":"background","keywords":["asthma","diagnos","hospital","admission","icu","previous","history"],"answer":"A doctor told us he has asthma about a year ago. He visited the emergency department once last year but has never needed intensive care.","category":"history"},
+    {"id":"control","keywords":["night","frequency","often","control","preventer","controller","regular"],"answer":"He sometimes coughs at night, perhaps twice a week. I don't think he uses a daily preventer inhaler.","category":"history"},
+    {"id":"allergies","keywords":["drug allergy","medication allergy","allergies","allergic"],"answer":"I don't know of any medication allergies.","category":"history"}
+  ],
+  "assessment": [
+    {"id":"vitals","label":"Vital signs","finding":"Illustrative findings: HR 132/min, RR 38/min, SpO₂ 93% on room air, temperature 37.2°C. Verify against your institution's age-specific guidance.","category":"assessment"},
+    {"id":"work","label":"Work of breathing","finding":"Subcostal and intercostal recessions are visible. He speaks in short phrases and appears distressed.","category":"assessment"},
+    {"id":"auscultation","label":"Auscultation","finding":"Bilateral expiratory wheeze with reduced air entry at both bases.","category":"assessment"},
+    {"id":"consciousness","label":"Consciousness and colour","finding":"Alert, anxious, and responsive. No central cyanosis observed.","category":"assessment"},
+    {"id":"hydration","label":"Hydration and perfusion","finding":"Mucous membranes slightly dry; capillary refill approximately 2 seconds. Reassess with the full clinical picture.","category":"assessment"}
+  ],
+  "essential": ["onset","symptoms","inhaler","severity","background","control","vitals","work","auscultation","consciousness"],
+  "safety_message":"This child has concerning respiratory findings in this fictional scenario. In a real setting, promptly seek senior clinical help and follow local paediatric deterioration and acute asthma protocols. Do not delay escalation to complete a checklist."
+}
