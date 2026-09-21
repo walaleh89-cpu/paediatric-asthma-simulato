@@ -61,6 +61,43 @@ GEMINI_AVAILABLE = bool(API_KEY and genai is not None)
 # offers a different free-tier model.
 GEMINI_MODEL = "gemini-2.5-flash"
 
+# TEMPORARY MODEL CHECKER
+# Remove after troubleshooting.
+
+if GEMINI_AVAILABLE:
+
+    with st.expander("🔧 Check available Gemini models"):
+
+        if st.button("List available models"):
+
+            try:
+
+                client = genai.Client(
+                    api_key=API_KEY
+                )
+
+                models = client.models.list()
+
+                for model in models:
+
+                    name = model.name
+
+                    if "gemini" in name.lower():
+
+                        st.write(name)
+
+            except Exception as e:
+
+                st.error(
+                    "Model listing failed. "
+                    f"Error type: {type(e).__name__}"
+                )
+
+                st.write(
+                    "HTTP code:",
+                    getattr(e, "code", "Unknown")
+                )
+
 
 # ==========================================
 # SESSION STATE
