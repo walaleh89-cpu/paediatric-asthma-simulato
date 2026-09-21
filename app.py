@@ -61,6 +61,37 @@ GEMINI_AVAILABLE = bool(API_KEY and genai is not None)
 # offers a different free-tier model.
 GEMINI_MODEL = "gemini-2.5-flash"
 
+# TEMPORARY GEMINI CONNECTION TEST
+
+if GEMINI_AVAILABLE:
+
+    with st.expander("🔧 Gemini Connection Test"):
+
+        if st.button("Test Gemini API"):
+
+            try:
+                client = genai.Client(
+                    api_key=API_KEY
+                )
+
+                response = client.models.generate_content(
+                    model="gemini-2.5-flash",
+                    contents="Say hello."
+                )
+
+                st.success("Gemini is working!")
+                st.write(response.text)
+
+            except Exception as e:
+
+                st.error(
+                    f"Error type: {type(e).__name__}"
+                )
+
+                st.error(
+                    f"HTTP code: {getattr(e, 'code', 'Unknown')}"
+                )
+
 # TEMPORARY MODEL CHECKER
 # Remove after troubleshooting.
 
